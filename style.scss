@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  background-color: $verde;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: $cinza-claro;
+  color: $cinza-escuro;
+
+  h1 {
+    margin: 0;
+  }
+
+  .buttons {
+    a {
+      @include button-style($roxo, #fff);
+      margin-left: 10px;
+    }
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+
+  .form-container, .table-container {
+    background-color: $cinza-claro;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+  }
+
+  .form-container {
+    text-align: center;
+
+    h2 {
+      color: $cinza-escuro;
+    }
+
+    input {
+      @include input-style;
+    }
+
+    button {
+      @include button-style($cinza-medio, #fff);
+    }
+
+    p {
+      margin-top: 10px;
+      color: $erro;
+      &.sucesso {
+        color: $sucesso;
+      }
+    }
+  }
+
+  .table-container {
+    width: 80%;
+    max-height: 400px;
+    overflow-y: scroll;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      tr {
+        background-color: $cinza-medio;
+        color: $cinza-escuro;
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid $cinza-escuro;
+      }
+    }
+
+    #loading {
+        text-align: center;
+        font-size: 20px;
+        display: none; // Inicialmente escondido
+        color: $cinza-escuro; // Cor do texto de loading
+        font-weight: bold;
+      }
+      
+  }
+}
