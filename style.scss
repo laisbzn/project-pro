@@ -46,7 +46,8 @@ main {
     }
 
     input {
-      @include input-style;
+      width: 90%; // Inputs mais curtos
+      margin-bottom: 10px; // Espaço entre os inputs
     }
 
     button {
@@ -55,17 +56,51 @@ main {
 
     p {
       margin-top: 10px;
-      color: $erro;
       &.sucesso {
-        color: $sucesso;
+        color: #fff; // Letra branca
+        background-color: $sucesso; // Fundo verde de sucesso
+        padding: 10px;
+        border-radius: 5px;
+      }
+      &.erro {
+        color: #fff; // Letra branca
+        background-color: $erro; // Fundo vermelho para erro
+        padding: 10px;
+        border-radius: 5px;
       }
     }
   }
 
+  // Estilos para a página de lista de livros
   .table-container {
-    width: 80%;
+    width: 80%; // Aumenta a largura da tabela
     max-height: 400px;
     overflow-y: scroll;
+
+    // Configuração para o título e a busca
+    .search-container {
+      display: flex;
+      justify-content: space-between; // Alinha o título à esquerda e o campo de busca à direita
+      align-items: center; // Centraliza verticalmente
+      margin-bottom: 20px;
+      background-color: $cinza-claro;
+      padding: 10px;
+      border-radius: 5px;
+
+      h2 {
+        margin: 0; // Remove margens extras
+        white-space: nowrap; // Garante que o texto não quebre linha
+        color: $cinza-escuro;
+      }
+
+      input {
+        width: 10%; 
+        min-width: 80px; 
+        margin-left: auto; 
+        border-radius: 15px;
+        
+      }
+    }
 
     table {
       width: 100%;
@@ -83,12 +118,11 @@ main {
     }
 
     #loading {
-        text-align: center;
-        font-size: 20px;
-        display: none; // Inicialmente escondido
-        color: $cinza-escuro; // Cor do texto de loading
-        font-weight: bold;
-      }
-      
+      text-align: center;
+      font-size: 20px;
+      display: none; // Inicialmente escondido
+      color: $cinza-escuro; // Cor do texto de loading
+      font-weight: bold;
+    } 
   }
 }

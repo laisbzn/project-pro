@@ -1,3 +1,4 @@
+// Mixins para reaproveitar código
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -10,14 +11,7 @@
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
-  }
-  
-  @mixin input-style {
-    width: 100%;
-    padding: 10px 10px;
-    margin: 10px 0;
-    border: 1px solid $cinza-medio;
-    border-radius: 5px;
   }
   
